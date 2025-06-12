@@ -1,0 +1,161 @@
+body {
+    all: unset;
+    background-color: white;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #0a1214;
+}
+
+button {
+    width: 300px;
+    height: 200px;
+    font-size: 24px;
+    border-radius: 1rem;
+    background: transparent;
+}
+
+#fun {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+/* Оранжевый фон */
+#fun::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(to top, darkorange, transparent);
+    z-index: -1;
+    transition: height 0.4s ease;
+    border-radius: 1rem;
+}
+
+/* При наведении — поднимается до 50% */
+#fun:hover::before {
+    height: 50%;
+}
+
+
+
+#aggressive {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+/* Оранжевый фон */
+#aggressive::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(to top, darkred, transparent);
+    z-index: -1;
+    transition: height 0.4s ease;
+    border-radius: 1rem;
+}
+
+/* При наведении — поднимается до 50% */
+#aggressive:hover::before {
+    height: 50%;
+}
+
+#author {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+/* Оранжевый фон */
+#author::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(to top, rgb(250, 220, 180), transparent);
+    z-index: -1;
+    transition: height 0.4s ease;
+    border-radius: 1rem;
+}
+
+/* При наведении — поднимается до 50% */
+#author:hover::before {
+    height: 75%;
+}
+
+#inspiring{
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+/* Оранжевый фон */
+#inspiring::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(to top, rgb(150, 220, 255), transparent);
+    z-index: -1;
+    transition: height 0.4s ease;
+    border-radius: 1rem;
+}
+
+/* При наведении — поднимается до 50% */
+#inspiring:hover::before {
+    height: 60%;
+}
+
+#poster {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+
+.title {
+    display: block;
+    text-align: center;
+    font-size: 44px;
+    color: #0A1214;
+}
+
+.mood_flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#rating {
+    display: block;
+    text-align: center;
+    font-size: 44px;
+}
+
+.bad {
+    color: darkred;
+}
+
+.average {
+    color: olive;
+}
+
+.good {
+    color: skyblue;
+}
+
+.masterpiece {
+    color: goldenrod;
+}
