@@ -1,23 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <link href="styles.css" rel="stylesheet">
     <title>Mood Movies</title>
 </head>
 <body>
-<h1>Mood Movies</h1>
-<h2>Хочется чего-то...</h2>
-<div class="mood_flex">
-    <button id="fun">Весёлого    </button>
-    <button id="aggressive">Агрессивного</button>
-    <button id="author">Авторского</button>
-    <button id="inspiring">Задумчивого</button>
+<div class="container">
+    <nav>
+        <a href="index.html"> <h1>Mood Movies</h1></a>
+        <div class="content_container">
+            <a href="history.html">История Оценок</a>
+            <ul>Подборки</ul>
+            <list-creating>
+                <button id="openList" data-open-modal>Создать подборку</button>
+            </list-creating>
+            <ul id="tableList"></ul>
+            <dialog data-modal>
+                <div class="list_container">
+                    <input id="listCreator" type="text" placeholder="Название Подборки">
+                    <input id="movieSearch" type="text" placeholder="Фильм для Подборки">
+                    <ul id="result"></ul>
+                    <button id="createButton" type="submit">Создать Подборку</button>
+                    <button id="closeDialog" data-close-modal>Выйти</button>
+                </div>
+            </dialog>
+            <button type="button" id="theme_changer" data-theme-toggle><img src="https://img.icons8.com/?size=100&id=nNtT9r4dDsaU&format=png&color=000000" width="24" height="24"></button>
+                <option value="sun"><img src="https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png" alt="light" width="24" height="24"></option>
+        </div>
+    </nav>
+    <h2 class="h2">Хочется чего-то...</h2>
+    <div class="mood_flex">
+        <button id="fun" class="mood_button"><span class="button button_light">Весёлого</span></button>
+        <button id="aggressive" class="mood_button"><span class="button button_light">Агрессивного</span></button>
+        <button id="author" class="mood_button"><span class="button button_light">Авторского</span></button>
+        <button id="inspiring" class="mood_button"><span class="button button_light">Задумчивого</span></button>
+    </div>
+    <div id="likeness">
+        <button id="like" class="rate"><img src="https://www.freeiconspng.com/uploads/white-like-icon-png-20.png" width="70" height="70"></button>
+        <a id="letterboxd" href="https://letterboxd.com/"><img id="poster" src="" alt="Постер" height="450"></a>
+        <button id="dislike" class="rate"><img src="https://pngimg.com/d/dislike_PNG71.png" width="50" height="50"></button>
+
+    </div>
+    <br>
+    <span id="showTitle"></span>
+    <span id="rating"></span>
+    <div id="history">
+        <div id="history_like">
+            <h2 id="like_header">Список Понравившихся Фильмов</h2>
+            <div id="like_container"></div>
+        </div>
+        <div id="history_dislike">
+            <h2 id="dislike_header">Список НеПонравившихся Фильмов</h2>
+            <div id="dislike_container"></div>
+        </div>
+    </div>
+
+    <button class="mood_button" id="reset">Очистить Историю</button>
 </div>
-<img id="poster" src="" alt="Постер" width="300">
-<br>
-<span id="showTitle"></span>
-<span id="rating"></span>
 <script type="module" src="main.js"></script>
 </body>
 </html>
