@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link href="styles.css" rel="stylesheet">
+    <script>
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
     <title>Mood Movies</title>
 </head>
 <body>
@@ -12,9 +16,7 @@
         <div class="content_container">
             <a href="history.html">История Оценок</a>
             <ul>Подборки</ul>
-            <list-creating>
                 <button id="openList" data-open-modal>Создать подборку</button>
-            </list-creating>
             <ul id="tableList"></ul>
             <dialog data-modal>
                 <div class="list_container">
@@ -38,7 +40,7 @@
     </div>
     <div id="likeness">
         <button id="like" class="rate"><img src="https://www.freeiconspng.com/uploads/white-like-icon-png-20.png" width="70" height="70"></button>
-        <a id="letterboxd" href="https://letterboxd.com/"><img id="poster" src="" alt="Постер" height="450"></a>
+        <a id="letterboxd" href="https://letterboxd.com/"><img id="poster" src="" alt="Постер" height="420"></a>
         <button id="dislike" class="rate"><img src="https://pngimg.com/d/dislike_PNG71.png" width="50" height="50"></button>
 
     </div>

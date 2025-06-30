@@ -1,8 +1,7 @@
 import {likeContainer, dislikeContainer, reset, like, dislike} from "./likeness.js";
+import {thinking, aggressive, authorian, comedy} from "./data/movies.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    localStorage.getItem('theme')
-
     const themeChanger = document.getElementById('theme_changer');
 
     themeChanger.addEventListener('click', () => {
@@ -10,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         const themeIcon = document.getElementsByTagName('img')[0];
         document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
         if (currentTheme === 'dark') {
             themeIcon.src = 'https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png'
         } else if (currentTheme === 'light') {
@@ -32,6 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dislikedSet = new Set()
     disliked.forEach(item => dislikedSet.add(item))
+
+    const allMovies = [...thinking, ...aggressive, ...authorian, ...comedy];
+
+    function findMovieByTitle(title) {
+        return allMovies.find(movie => movie.title === title);
+    }
+
+    function posterRender(set, container) {
+        container.innerHTML = '';
+        set.forEach(title => {
+            const movie = findMovieByTitle(title);
+            if (movie) {
+                const img = document.createElement('img');
+                img.src = movie.url;
+                img.alt = movie.title;
+                img.classList.add('poster_thumb');
+                container.appendChild(img);
+            }
+        })
+    }
 
     posterRender(likedSet, likeContainer)
     posterRender(dislikedSet, dislikeContainer)

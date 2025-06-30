@@ -2,7 +2,6 @@ import {thinking, aggressive, authorian, comedy} from "./data/movies.js";
 import {likeContainer, dislikeContainer, reset, like, dislike} from "./likeness.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    localStorage.getItem('theme');
 
     let currentMovie = null
 
@@ -34,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         const themeIcon = document.getElementsByTagName('img')[0];
         document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
         if (currentTheme === 'dark') {
             themeIcon.src = 'https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png'
         } else if (currentTheme === 'light') {
@@ -45,14 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
         listCreator.value = '';
         searchMovie.value = '';
         dialog.showModal()
-    })
+     })
 
    closeList.addEventListener('click', () => {
        dialog.close()
    })
-
-
-
 
     function showMovie(genre) {
         let i = Math.floor(Math.random() * 3);
@@ -73,7 +70,65 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         rating.textContent = genre[i].rating
         letterboxd.href = `${genre[i].urlLetterboxd}`
-        localStorage.setItem('movie', genre[i].title);
+        localStorage.setItem('movie', genre[i].title);    listCreator.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                const listName = listCreator.value;
+                if (listName.length > 0) {
+                    localStorage.setItem(`${listName}`,'[]')
+                    const listOfList = JSON.parse(localStorage.getItem('userLists'))
+                    listOfList.push(`${listName}`)
+                    localStorage.setItem('userLists', JSON.stringify(listOfList))
+                }
+            }
+        })
+
+        createButton.addEventListener('click', () => {
+            const listName = listCreator.value;
+            tableList.innerHTML = '';
+            tableList.forEach(listName => {
+                const li = document.createElement('li')
+                const choiceButton = document.createElement('button');
+                if (listName.length > 0) {
+                    localStorage.setItem('userLists', '[]')
+                    localStorage.setItem(`${listName}`,'[]')
+                    const listOfList = JSON.parse(localStorage.getItem('userLists'))
+                    listOfList.push(`${listName}`)
+                    localStorage.setItem('userLists', JSON.stringify(listOfList))
+                    choiceButton.textContent = `${listName}`;
+                }
+                listCreator.appendChild(li);
+                li.appendChild(choiceButton);
+            })
+        })
+
+        function renderResult(results) {
+            resultList.innerHTML = '';
+            results.forEach(movie => {
+                const li = document.createElement('li');
+                const choiceButton = document.createElement('button');
+                choiceButton.textContent = `${movie.title} (${movie.rating})`
+                choiceButton.addEventListener('click', () => {
+                    const listName = listCreator.value;
+                    if (localStorage.getItem(`${listName}`)) {
+                        const choose = JSON.parse(localStorage.getItem(`${listName}`))
+                        choose.push(movie.title);
+                        localStorage.setItem(`${listName}`, JSON.stringify(choose))
+                    }
+                })
+                resultList.appendChild(li);
+                li.appendChild(choiceButton)
+            })
+        }
+
+
+        searchMovie.addEventListener('input', () => {
+            const query = searchMovie.value.toLowerCase();
+            const filtredMovies = allMovies.filter(movie =>
+                movie.title.toLowerCase().includes(query));
+            renderResult(filtredMovies)
+        })
+
+        renderResult(movies)
     }
 
         fun.addEventListener('click', () => {

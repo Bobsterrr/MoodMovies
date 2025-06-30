@@ -291,3 +291,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
 }
+
+#like_container, #dislike_container {
+    margin: 0 30px;
+}

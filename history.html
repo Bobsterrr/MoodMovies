@@ -3,19 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <link href="styles.css" rel="stylesheet">
+    <script>
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
     <title>Mood Movies</title>
 </head>
 <body>
 <div class="container">
     <nav>
       <a href="index.html"> <h1>Mood Movies</h1></a>
-        <button id="theme_changer"><img id="theme_icon" src="https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png" width="24" height="24" alt="sun"></button>
+        <div class="content_container">
+            <a href="history.html">История Оценок</a>
+            <ul>Подборки</ul>
+            <button id="openList" data-open-modal>Создать подборку</button>
+            <ul id="tableList"></ul>
+            <dialog data-modal>
+                <div class="list_container">
+                    <input id="listCreator" type="text" placeholder="Название Подборки">
+                    <input id="movieSearch" type="text" placeholder="Фильм для Подборки">
+                    <ul id="result"></ul>
+                    <button id="createButton" type="submit">Создать Подборку</button>
+                    <button id="closeDialog" data-close-modal>Выйти</button>
+                </div>
+            </dialog>
+            <button id="theme_changer"><img id="theme_icon" src="https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png" width="24" height="24" alt="sun"></button>
+        </div>
     </nav>
-    <h2 id="like_header">Список Понравившихся Фильмов</h2>
-    <h2 id="showTitle">Название фильма</h2>
-    <div id="like_container"></div>
-    <h2 id="dislike_header">Список НеПонравившихся Фильмов</h2>
-    <div id="dislike_container"></div>
+    <div id="history">
+        <div id="history_like">
+            <h2 id="like_header">Список Понравившихся Фильмов</h2>
+            <div id="like_container"></div>
+        </div>
+        <div id="history_dislike">
+            <h2 id="dislike_header">Список НеПонравившихся Фильмов</h2>
+            <div id="dislike_container"></div>
+        </div>
+    </div>
 </div>
 <script type="module" src="history.js"></script>
 </body>
