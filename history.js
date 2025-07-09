@@ -1,21 +1,9 @@
 import {likeContainer, dislikeContainer, reset, like, dislike} from "./likeness.js";
 import {thinking, aggressive, authorian, comedy} from "./data/movies.js";
+import "./listCreating.js"
+import "./themeToggle.js"
 
 document.addEventListener('DOMContentLoaded', () => {
-    const themeChanger = document.getElementById('theme_changer');
-
-    themeChanger.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        const themeIcon = document.getElementsByTagName('img')[0];
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        if (currentTheme === 'dark') {
-            themeIcon.src = 'https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png'
-        } else if (currentTheme === 'light') {
-            themeIcon.src = 'https://img.icons8.com/?size=100&id=nNtT9r4dDsaU&format=png&color=000000'
-        }
-    })
 
     const reactions = JSON.parse(localStorage.getItem('reactions')) || {};
 

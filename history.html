@@ -16,18 +16,9 @@
         <div class="content_container">
             <a href="history.html">История Оценок</a>
             <ul>Подборки</ul>
-            <button id="openList" data-open-modal>Создать подборку</button>
-            <ul id="tableList"></ul>
-            <dialog data-modal>
-                <div class="list_container">
-                    <input id="listCreator" type="text" placeholder="Название Подборки">
-                    <input id="movieSearch" type="text" placeholder="Фильм для Подборки">
-                    <ul id="result"></ul>
-                    <button id="createButton" type="submit">Создать Подборку</button>
-                    <button id="closeDialog" data-close-modal>Выйти</button>
-                </div>
-            </dialog>
-            <button id="theme_changer"><img id="theme_icon" src="https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png" width="24" height="24" alt="sun"></button>
+		<list-creating></list-creating>
+		<theme-toggle></theme-toggle>
+
         </div>
     </nav>
     <div id="history">
