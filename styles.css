@@ -265,4 +265,12 @@ mood-button {
 	.title {
 		font-size: 24px;
 	}
+
+	#like_header {
+		font-size: 20px;
+	}
+
+	h1 {
+		margin-left: 10px;
+	}
 }
