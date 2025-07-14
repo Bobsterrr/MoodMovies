@@ -261,4 +261,8 @@ mood-button {
 	#dislike {
 		margin-left: 20px;
 	}
+
+	.title {
+		font-size: 24px;
+	}
 }
