@@ -1,10 +1,10 @@
 :root {
 	--base: lightgoldenrodyellow;
-	--text: #0A1214;
+	--text: #0a1214;
 }
 
 @media (prefers-color-scheme: dark) {
-	--base: #0A1214;
+	--base: #0a1214;
 	--text: lightgoldenrodyellow;
 }
 
@@ -22,14 +22,13 @@ body {
 [data-theme='light'] {
 	color-scheme: light;
 	--base: lightgoldenrodyellow;
-	--text: #0A1214;
+	--text: #0a1214;
 }
 
 [data-theme='dark'] {
 	color-scheme: dark;
-	--base: #0A1214;
+	--base: #0a1214;
 	--text: lightgoldenrodyellow;
-
 }
 
 button {
@@ -53,7 +52,6 @@ a:hover {
 	margin: auto;
 }
 
-
 h1,
 h2 {
 	text-align: center;
@@ -72,7 +70,7 @@ h1 {
 }
 
 ul {
-	all: unset
+	all: unset;
 }
 
 nav {
@@ -113,7 +111,6 @@ mood-button {
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
 
 .title {
 	display: block;
@@ -187,8 +184,6 @@ mood-button {
 	transition: 1s;
 }
 
-#likeness:has(#like:active) #letterboxd {}
-
 #dislike {
 	background-color: darkred;
 	margin-left: 70px;
@@ -223,7 +218,7 @@ mood-button {
 	width: 200px;
 	height: 40px;
 	background-color: darkgoldenrod;
-	display: flow;
+	display: block;
 	margin: 50px auto 0px;
 }
 
@@ -237,8 +232,33 @@ mood-button {
 	margin: 0 30px;
 }
 
-@media screen and (max-width: 450px) {
-	#letterboxd {
-		width: 350px;
+@media (max-width: 450px) {
+	#reset {
+		background-color: hotpink;
+	}
+
+	.mood_flex {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	mood-button {
+		width: 300px;
+		margin-top: 15px;
+	}
+
+	#poster {
+		width: 175px;
+		height: 250px;
+	}
+
+	#like {
+		margin-right: 20px;
+	}
+
+	#dislike {
+		margin-left: 20px;
 	}
 }

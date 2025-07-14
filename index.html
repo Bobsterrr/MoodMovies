@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light">
 
 <head>
-	<meta charset="UTF-8">
-	<link href="styles.css" rel="stylesheet">
+	<meta charset="UTF-8" />
+	<link href="styles.css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 		const theme = localStorage.getItem('theme') || 'light';
 		document.documentElement.setAttribute('data-theme', theme);
@@ -19,7 +20,9 @@
 			</a>
 			<div class="content_container">
 				<a href="history.html">История Оценок</a>
-				<ul>Подборки</ul>
+				<ul>
+					Подборки
+				</ul>
 				<list-creating></list-creating>
 				<theme-toggle></theme-toggle>
 			</div>
@@ -32,16 +35,17 @@
 			<mood-button id="inspiring" moodWord="Вдохновляющего"></mood-button>
 		</div>
 		<div id="likeness">
-			<button id="like" class="rate"><img
-					src="https://www.freeiconspng.com/uploads/white-like-icon-png-20.png" width="70"
-					height="70"></button>
+			<button id="like" class="rate">
+				<img src="https://www.freeiconspng.com/uploads/white-like-icon-png-20.png" width="70"
+					height="70" />
+			</button>
 			<a id="letterboxd" href="https://letterboxd.com/"><img id="poster" src="/PPH.png" alt="Постер"
-					height="420"></a>
-			<button id="dislike" class="rate"><img src="https://pngimg.com/d/dislike_PNG71.png" width="50"
-					height="50"></button>
-
+					height="420" /></a>
+			<button id="dislike" class="rate">
+				<img src="https://pngimg.com/d/dislike_PNG71.png" width="50" height="50" />
+			</button>
 		</div>
-		<br>
+		<br />
 		<span id="showTitle"></span>
 		<span id="rating"></span>
 		<div id="history">

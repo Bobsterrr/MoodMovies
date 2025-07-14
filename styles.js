@@ -1,4 +1,4 @@
-export const moodButtonStyle = new CSSStyleSheet() 
+export const moodButtonStyle = new CSSStyleSheet();
 
 moodButtonStyle.replaceSync(`
 button {
@@ -6,9 +6,9 @@ button {
 	text-align: center;
 	margin: 0 5px;
 }
-`)
+`);
 
-export const listCreatingStyle = new CSSStyleSheet()
+export const listCreatingStyle = new CSSStyleSheet();
 
 listCreatingStyle.replaceSync(`
 button {
@@ -80,4 +80,4 @@ dialog::backdrop {
 	flex-direction: column;
 	align-items: center;
 }
-`)
+`);

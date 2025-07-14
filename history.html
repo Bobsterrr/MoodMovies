@@ -1,37 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <link href="styles.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="styles.css" rel="stylesheet" />
     <script>
-        const theme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', theme);
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
     </script>
     <title>Mood Movies</title>
-</head>
-<body>
-<div class="container">
-    <nav>
-      <a href="index.html"> <h1>Mood Movies</h1></a>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="index.html"> <h1>Mood Movies</h1></a>
         <div class="content_container">
-            <a href="history.html">История Оценок</a>
-            <ul>Подборки</ul>
-		<list-creating></list-creating>
-		<theme-toggle></theme-toggle>
-
+          <a href="history.html">История Оценок</a>
+          <ul>
+            Подборки
+          </ul>
+          <list-creating></list-creating>
+          <theme-toggle></theme-toggle>
         </div>
-    </nav>
-    <div id="history">
+      </nav>
+      <div id="history">
         <div id="history_like">
-            <h2 id="like_header">Список Понравившихся Фильмов</h2>
-            <div id="like_container"></div>
+          <h2 id="like_header">Список Понравившихся Фильмов</h2>
+          <div id="like_container"></div>
         </div>
         <div id="history_dislike">
-            <h2 id="dislike_header">Список НеПонравившихся Фильмов</h2>
-            <div id="dislike_container"></div>
+          <h2 id="dislike_header">Список НеПонравившихся Фильмов</h2>
+          <div id="dislike_container"></div>
         </div>
+      </div>
     </div>
-</div>
-<script type="module" src="history.js"></script>
-</body>
+    <script type="module" src="history.js"></script>
+  </body>
 </html>
