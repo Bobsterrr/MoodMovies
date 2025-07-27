@@ -273,4 +273,8 @@ mood-button {
 	h1 {
 		margin-left: 10px;
 	}
+
+	a {
+		margin-right: 0;
+	}
 }
